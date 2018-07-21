@@ -51,10 +51,10 @@ class BlogInstall extends Command
      */
     public function execShellWithPrettyPrint($command)
     {
-        $this->info('---');
+        $this->info('----------------');
         $this->info($command);
         $output = shell_exec($command);
         $this->info($output);
-        $this->info('---');
+        $this->info('----------------');
     }
 }
