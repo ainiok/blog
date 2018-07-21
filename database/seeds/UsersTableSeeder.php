@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
         $password = Hash::make('123456');
         User::create([
             'name' => 'admin',
+            'nickname'=>'admin',
             'email' => 'admin@qq.com',
             'password' => $password,
             'status' => true,
@@ -26,5 +27,6 @@ class UsersTableSeeder extends Seeder
             'created_at'  => Carbon::now(),
             'updated_at'  => Carbon::now()
         ]);
+        factory(User::class,10)->create();
     }
 }

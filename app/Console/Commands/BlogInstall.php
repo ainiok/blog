@@ -38,9 +38,10 @@ class BlogInstall extends Command
     public function handle()
     {
         $this->execShellWithPrettyPrint('php artisan key:generate');
-//        $this->execShellWithPrettyPrint('php artisan migrate --seed');
+        $this->execShellWithPrettyPrint('php artisan migrate --seed');
         $this->execShellWithPrettyPrint('php artisan passport:install');
-//        $this->execShellWithPrettyPrint('php artisan storage:link');
+        $this->execShellWithPrettyPrint('composer dump-autoload');   //可以手动执行
+        $this->execShellWithPrettyPrint('php artisan storage:link');
     }
 
     /**
