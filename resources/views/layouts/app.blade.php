@@ -31,7 +31,9 @@
     <div id="app">
         @include('particals.navbar')
 
-        @yield('content')
+        <div class="main">
+            @yield('content')
+        </div>
 
         @include('particals.footer')
 
