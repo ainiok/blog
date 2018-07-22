@@ -65,7 +65,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/backend.js":
+/***/ "./resources/assets/js/frontend.js":
 /***/ (function(module, exports) {
 
 
@@ -75,7 +75,7 @@
 /***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/assets/js/backend.js");
+module.exports = __webpack_require__("./resources/assets/js/frontend.js");
 
 
 /***/ })

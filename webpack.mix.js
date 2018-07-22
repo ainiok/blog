@@ -35,6 +35,6 @@ mix.webpackConfig({
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .js('resources/assets/js/backend.js', 'public/js')
-    .sass('resources/assets/sass/backend.scss', 'public/css')
+    .js('resources/assets/js/frontend.js', 'public/js')
+    .sass('resources/assets/sass/frontend.scss', 'public/css')
     .version();

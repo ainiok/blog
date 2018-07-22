@@ -43337,7 +43337,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ "./resources/assets/sass/backend.scss":
+/***/ "./resources/assets/sass/frontend.scss":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -43349,7 +43349,7 @@ module.exports = Component.exports
 
 __webpack_require__("./resources/assets/js/app.js");
 __webpack_require__("./resources/assets/sass/app.scss");
-module.exports = __webpack_require__("./resources/assets/sass/backend.scss");
+module.exports = __webpack_require__("./resources/assets/sass/frontend.scss");
 
 
 /***/ })
