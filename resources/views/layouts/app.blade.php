@@ -14,7 +14,7 @@
     <title>@yield('title',config('app.name'))</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
 
     <script>
@@ -28,13 +28,17 @@
     @yield('styles')
 </head>
 <body>
-<div id="app">
-    @include('particals.navbar')
+    <div id="app">
+        @include('particals.navbar')
 
-    @yield('content')
-</div>
+        @yield('content')
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+        @include('particals.footer')
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ mix('js/frontend.js') }}"></script>
+    @yield('script')
 </body>
 </html>
