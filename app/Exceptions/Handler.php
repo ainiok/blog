@@ -44,10 +44,15 @@ class Handler extends ExceptionHandler
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responses
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if(!env('APP_DEBUG',false))
+        {
+            //
+        }else{
+            return parent::render($request, $exception);
+        }
     }
 }
