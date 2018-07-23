@@ -41,7 +41,7 @@ return [
         'title'       => 'Nothing is impossible.',
         'description' => 'https://ainiok.com',
         'number'      => 15,
-        'sort'        => 'desc',
+        'sortOrder'        => 'desc',
         'sortColumn'  => 'published_at',
     ],
 

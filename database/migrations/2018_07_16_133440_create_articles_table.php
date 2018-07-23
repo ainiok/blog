@@ -26,7 +26,7 @@ class CreateArticlesTable extends Migration
             $table->string('page_image')->nullable();
             $table->string('meta_description')->nullable();
             $table->boolean('is_original')->default(false);
-            $table->boolean('is_draft')->default(false);
+            $table->boolean('is_draft')->default(false)->comment('是否草稿');
             $table->integer('view_count')->unsigned()->default(0)->index();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
