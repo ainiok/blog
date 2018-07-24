@@ -1,4 +1,4 @@
-window.$ = window.jquery = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
 window.Vue = require('vue');
 

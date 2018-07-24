@@ -21,6 +21,8 @@ Laravel is accessible, yet powerful, providing tools needed for large, robust ap
 
 > npm i cross-env --save-dev
 
+> 注意： "ionicons": "^2.0.1", 指定版本,新版本有些ionicons 图标找不到
+
 ## 控前端资源改变
 > npm run watch
 
@@ -28,6 +30,8 @@ Laravel is accessible, yet powerful, providing tools needed for large, robust ap
 ## 安装
 
 > php artisan blog:install   **[控制台命令](http://laravelacademy.org/post/8346.html)**
+
+
 
 
 

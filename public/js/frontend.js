@@ -25875,7 +25875,7 @@ module.exports = g;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_i18n__ = __webpack_require__("./node_modules/vue-i18n/dist/vue-i18n.esm.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lang__ = __webpack_require__("./resources/assets/js/lang/index.js");
-window.$ = window.jquery = __webpack_require__("./node_modules/jquery/dist/jquery.js");
+window.$ = window.jQuery = __webpack_require__("./node_modules/jquery/dist/jquery.js");
 
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
