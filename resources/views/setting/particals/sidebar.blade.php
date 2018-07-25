@@ -10,7 +10,7 @@
                 <i class="ion-android-notifications-none"></i>{{ lang('Notification Setting') }}
             </a>
         @endif
-        <a href="{{ url('setting/binding') }}" class="list-group-item {{ isActive('setting.binding') }}">
+        <a href="{{ url('setting/bind') }}" class="list-group-item {{ isActive('setting.bind') }}">
             <i class="ion-lock-combination"></i>{{ lang('Account Binding') }}
         </a>
     </div>

@@ -12,10 +12,12 @@
 */
 
 Auth::routes();
-Route::get('/','ArticleController@index');
+Route::get('/', 'ArticleController@index');
+Route::post('password/change', 'UserController@changePassword')->middleware('auth');
 
 //setting
 
-Route::group(['middleware'=>'auth','prefix'=>'setting'],function(){
-   Route::get('/','SettingController@index');
+Route::group(['middleware' => 'auth', 'prefix' => 'setting'], function () {
+    Route::get('/', 'SettingController@index')->name('setting.index');
+    Route::get('bind', 'SettingController@bind')->name('setting.bind');
 });

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',lang('Settings'))
+@section('title',lang('Account Setting'))
 
 @section('content')
     <div class="container setting">

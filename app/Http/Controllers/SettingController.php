@@ -18,4 +18,9 @@ class SettingController extends Controller
     {
         return view('setting.index');
     }
+
+    public function bind()
+    {
+        return view('setting.bind');
+    }
 }
