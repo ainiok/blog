@@ -14,4 +14,8 @@
 Auth::routes();
 Route::get('/','ArticleController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//setting
+
+Route::group(['middleware'=>'auth','prefix'=>'setting'],function(){
+   Route::get('/','SettingController@index');
+});

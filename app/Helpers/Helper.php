@@ -21,6 +21,18 @@ if (!function_exists('lang')) {
     }
 }
 
+if(!function_exists('isActive')) {
+    /**
+     * Determine the nav if it is the current route.
+     *
+     * @param string $nav
+     * @return boolean
+     */
+    function isActive($nav) {
+        return Route::currentRouteName() == $nav ? 'active' : '';
+    }
+}
+
 if (!function_exists('human_filesize')) {
     /**
      * 返回可读性更好的文件尺寸

@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="{{ config('blog.default_icon') }}">
 
-    <title>@yield('title',config('app.name'))</title>
+    <title> {{ config('app.name') }} - @yield('title')</title>
 
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}

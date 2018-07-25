@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="/">Article</a></li>
+                <li><a href="{{ url('/') }}">{{ lang('Articles') }}</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -39,15 +39,25 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-expanded="false" aria-haspopup="true" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->name }}
+                            <b class="caret"></b>&nbsp;&nbsp;
+                            <img class="avatar img-circle" src="{{ Auth::user()->avatar }}">
                         </a>
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu text-center" role="menu">
+                            <li><a href="{{ url('user', ['name' => Auth::user()->name]) }}"><i
+                                            class="ion-person"></i>{{ lang('Personal Center') }}</a></li>
+                            <li><a href="{{ url('setting') }}"><i class="ion-gear-b"></i>{{ lang('Settings') }}</a></li>
+                            @if(Auth::user()->is_admin)
+                                <li><a href="{{ url('dashboard') }}"><i
+                                                class="ion-ios-speedometer"></i>{{ lang('Dashboard') }}</a></li>
+                            @endif
+                            <li class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Logout
+                                    <i class="ion-log-out"></i>{{ lang('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
