@@ -23,4 +23,11 @@ class UserRepository extends BaseRepository
     {
         return $user->update(['password' => bcrypt($password)]);
     }
+
+    public function firstByUsername($username)
+    {
+        return $this->model
+            ->where('name', $username)
+            ->first();
+    }
 }

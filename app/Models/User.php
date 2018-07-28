@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         parent::boot();
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
+    }
 }

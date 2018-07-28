@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title',lang('Articles'))
 @section('content')
     @component('particals.jumbotron')
         <h3>{{ config('blog.article.title') }}</h3>

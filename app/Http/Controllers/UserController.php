@@ -18,6 +18,15 @@ class UserController extends Controller
         $this->user = $user;
     }
 
+    public function show($username)
+    {
+        $user = $this->user->firstByUsername($username);
+        if (!isset($user)) abort(404);
+
+        $comments = $user->comments->take(10);
+        return view('user.index', compact('user', 'comments'));
+    }
+
     //
     public function changePassword(Request $request)
     {

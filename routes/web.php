@@ -21,3 +21,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'setting'], function () {
     Route::get('/', 'SettingController@index')->name('setting.index');
     Route::get('bind', 'SettingController@bind')->name('setting.bind');
 });
+
+Route::group(['prefix'=>'user'],function(){
+    Route::group(['prefix'=>'{username}'],function(){
+        Route::get('/','UserController@show');
+    });
+});
