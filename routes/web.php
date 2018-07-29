@@ -22,8 +22,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'setting'], function () {
     Route::get('bind', 'SettingController@bind')->name('setting.bind');
 });
 
-Route::group(['prefix'=>'user'],function(){
-    Route::group(['prefix'=>'{username}'],function(){
-        Route::get('/','UserController@show');
+//user
+Route::group(['prefix' => 'user'], function () {
+    Route::group(['prefix' => '{username}'], function () {
+        Route::get('/', 'UserController@show');
     });
+});
+
+//dashboard
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('{path?}', 'HomeController@dashboard')->where('path', '[\/\w\.-]*');
 });

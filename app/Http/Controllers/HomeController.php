@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ArticleRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $article;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ArticleRepository $article)
     {
-        $this->middleware('auth');
+        $this->article = $article;
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function dashboard()
     {
-        return view('home');
+        return view('dashboard.index');
     }
 }

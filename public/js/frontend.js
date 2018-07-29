@@ -25901,17 +25901,379 @@ var app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/assets/js/lang/cn/form.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    'name': '用户名',
+    'email': '邮箱',
+    'password': '密码',
+    'confirm_password': '确认密码',
+    'category': '分类',
+    'select_option': '选择选项',
+    'title': '标题',
+    'subtitle': '副标题',
+    'page_image': '页面图像',
+    'content': '内容',
+    'content_notice': '请输入内容',
+    'tag': '标签',
+    'select_tag': '选择标签',
+    'select_category': '选择分类',
+    'meta_description': '主要描述',
+    'datetime': '日期时间',
+    'is_draft': '是否草稿？',
+    'is_original': '是否原创？',
+    'status': '状态',
+    'discussions': '讨论',
+    'articles': '文章',
+    'folder_name': '文件夹名',
+    'file': '文件',
+    'file_name': '文件名',
+    'cancel': '取消',
+    'ok': '确认',
+    'category_name': '分类名字',
+    'description': '描述',
+    'path': '路径',
+    'link_name': '链接名',
+    'link': '链接',
+    'image': '图像',
+    'is_enable': '是否开启',
+    'yes': '是',
+    'no': '否',
+    'create_user': '创建用户',
+    'edit_user': '修改用户',
+    'back': '返回',
+    'nickname': '昵称',
+    'website': '网站地址',
+    'create_article': '创建文章',
+    'edit_article': '修改文章',
+    'create_discussion': '创建讨论',
+    'edit_discussion': '修改讨论',
+    'edit_comment': '修改评论',
+    'submit_comment': '发布评论',
+    'create_tag': '创建标签',
+    'edit_tag': '修改标签',
+    'create_folder': '创建文件夹',
+    'upload_file': '上传文件',
+    'create_category': '创建分类',
+    'edit_category': '修改分类',
+    'category_description': '请输入分类描述',
+    'create_link': '创建友链',
+    'edit_link': '修改友链',
+    'create': '创建',
+    'edit': '修改',
+    'crop_avatar': '裁剪头像',
+    'modify_avatar': '修改头像',
+    'content_placeholder': '请输入{type}内容。',
+    'article': '文章',
+    'discussion': '讨论',
+    'comment': '评论',
+    'published_at': '发布时间？'
+
+});
+
+/***/ }),
+
 /***/ "./resources/assets/js/lang/cn/index.js":
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sidebar__ = __webpack_require__("./resources/assets/js/lang/cn/sidebar.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__page__ = __webpack_require__("./resources/assets/js/lang/cn/page.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table__ = __webpack_require__("./resources/assets/js/lang/cn/table.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form__ = __webpack_require__("./resources/assets/js/lang/cn/form.js");
 
 
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    sidebar: __WEBPACK_IMPORTED_MODULE_0__sidebar__["a" /* default */],
+    page: __WEBPACK_IMPORTED_MODULE_1__page__["a" /* default */],
+    table: __WEBPACK_IMPORTED_MODULE_2__table__["a" /* default */],
+    form: __WEBPACK_IMPORTED_MODULE_3__form__["a" /* default */]
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/cn/page.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    users: '用户列表',
+    visitors: '访问列表',
+    articles: '文章列表',
+    comments: '评论列表',
+    discussions: '讨论列表',
+    files: '文件列表',
+    tags: '标签列表',
+    categories: '分类列表',
+    links: '友链列表',
+    systems: '系统设置',
+    user_num: '用户数',
+    view_num: '访问数',
+    article_num: '文章数',
+    comment_num: '评论数',
+    all: '全部',
+    admin: '管理员',
+    create: '创建',
+    system: '系统',
+    database: '数据库',
+    key: '设置',
+    value: '值',
+    server: '网站服务器',
+    domain: '域名',
+    version: '版本',
+    extension: '扩展',
+    driver: '驱动',
+    nothing: 'No Content'
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/cn/sidebar.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    dashboard: '面板',
+    user: '用户管理',
+    article: '文章管理',
+    discussion: '讨论管理',
+    comment: '评论管理',
+    tag: '标签管理',
+    file: '文件管理',
+    category: '分类管理',
+    link: '友链管理',
+    visitor: '访问列表',
+    system: '系统配置'
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/cn/table.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    id: 'ID',
+    avatar: '头像',
+    username: '用户名',
+    email: '邮箱地址',
+    status: '状态',
+    title: '标题',
+    subtitle: '副标题',
+    created_at: '创建时间',
+    published_at: '发布时间',
+    comment_type: '评论类型',
+    comment_title: '评论标题',
+    tag: '标签',
+    meta_description: '描述',
+    name: '名字',
+    type: '类型',
+    date: '日期',
+    size: '大小',
+    action: '操作',
+    path: '路径',
+    image: '图片',
+    link: '链接',
+    enabled: '是否启用',
+    article_title: '文章标题',
+    click_num: '点击次数',
+    ip: 'IP',
+    new_folder: '创建文件夹',
+    upload: '上传图片'
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/en/form.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    'name': 'Username',
+    'email': 'Email',
+    'password': 'Password',
+    'confirm_password': 'Confirm Password',
+    'category': 'Category',
+    'select_option': 'Select Option',
+    'title': 'Title',
+    'subtitle': 'SubTitle',
+    'page_image': 'Page Image',
+    'content': 'Content',
+    'content_notice': 'Please input the content',
+    'tag': 'Tag',
+    'select_tag': 'Select Tags',
+    'select_category': 'Select Categories',
+    'meta_description': 'Meta Description',
+    'datetime': 'Date Time',
+    'is_draft': 'Is Draft?',
+    'is_original': 'Is Original?',
+    'status': 'Status',
+    'discussions': 'Discussion',
+    'articles': 'Article',
+    'folder_name': 'Folder Name',
+    'file': 'File',
+    'file_name': 'File Name',
+    'cancel': 'Cancel',
+    'ok': 'OK',
+    'category_name': 'Category Name',
+    'description': 'Description',
+    'path': 'Path',
+    'link_name': 'Link Name',
+    'link': 'Link',
+    'image': 'Image',
+    'is_enable': 'Is Enable',
+    'yes': 'Yes',
+    'no': 'No',
+    'create_user': 'Create User',
+    'edit_user': 'Edit User',
+    'back': 'Back',
+    'nickname': 'Nick Name',
+    'website': 'Website',
+    'create_article': 'Create Article',
+    'edit_article': 'Edit Article',
+    'create_discussion': 'Create Discussion',
+    'edit_discussion': 'Edit Discussion',
+    'edit_comment': 'Edit Comment',
+    'submit_comment': 'Submit',
+    'create_tag': 'Create Tag',
+    'edit_tag': 'Edit Tag',
+    'create_folder': 'Create New Folder',
+    'upload_file': 'Upload New File',
+    'create_category': 'Create Category',
+    'edit_category': 'Edit Category',
+    'category_description': 'Please input category\'s description',
+    'create_link': 'Create Link',
+    'edit_link': 'Edit Link',
+    'create': 'Create',
+    'edit': 'Edit',
+    'crop_avatar': 'Crop Avatar',
+    'modify_avatar': 'Modify Avatar',
+    'content_placeholder': 'Please input the %{type} content.',
+    'article': 'article',
+    'discussion': 'discussion',
+    'comment': 'comment',
+    'published_at': 'Published At?'
+
+});
 
 /***/ }),
 
 /***/ "./resources/assets/js/lang/en/index.js":
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sidebar__ = __webpack_require__("./resources/assets/js/lang/en/sidebar.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__page__ = __webpack_require__("./resources/assets/js/lang/en/page.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table__ = __webpack_require__("./resources/assets/js/lang/en/table.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__form__ = __webpack_require__("./resources/assets/js/lang/en/form.js");
 
 
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    sidebar: __WEBPACK_IMPORTED_MODULE_0__sidebar__["a" /* default */],
+    page: __WEBPACK_IMPORTED_MODULE_1__page__["a" /* default */],
+    table: __WEBPACK_IMPORTED_MODULE_2__table__["a" /* default */],
+    form: __WEBPACK_IMPORTED_MODULE_3__form__["a" /* default */]
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/en/page.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    users: 'Users',
+    visitors: 'Visitors',
+    articles: 'Articles',
+    comments: 'Comments',
+    discussions: 'Discussions',
+    files: 'Files',
+    tags: 'Tags',
+    categories: 'Categories',
+    links: 'Links',
+    systems: 'Systems',
+    user_num: 'Users',
+    view_num: 'Views',
+    article_num: 'Articles',
+    comment_num: 'Comments',
+    all: 'All',
+    admin: 'Admin',
+    create: 'Create',
+    system: 'System',
+    database: 'Database',
+    key: 'Setting',
+    value: 'Value',
+    server: 'Web Server',
+    domain: 'Domain',
+    version: 'Version',
+    extension: 'Extension',
+    driver: 'Driver',
+    nothing: 'No Content'
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/en/sidebar.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    dashboard: 'Dashboard',
+    user: 'Users',
+    article: 'Articles',
+    discussion: 'Discussion',
+    comment: 'Comments',
+    tag: 'Tags',
+    file: 'Files',
+    category: 'Categories',
+    link: 'Links',
+    visitor: 'Visitors',
+    system: 'Systems'
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/lang/en/table.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    id: 'ID',
+    avatar: 'Avatar',
+    username: 'User Name',
+    email: 'E-Mail Address',
+    status: 'Status',
+    title: 'Title',
+    subtitle: 'Sub Title',
+    created_at: 'Created At',
+    published_at: 'Published At',
+    comment_type: 'Commentable Type',
+    comment_title: 'Commentable Title',
+    tag: 'Tag',
+    meta_description: 'Meta Description',
+    name: 'Name',
+    type: 'Type',
+    date: 'Date Time',
+    size: 'Size',
+    action: 'Actions',
+    path: 'Path',
+    image: 'Image',
+    link: 'Link',
+    enabled: 'Enabled',
+    article_title: 'Article Title',
+    click_num: 'Clicks Num',
+    ip: 'IP',
+    new_folder: 'New Folder',
+    upload: 'Uplaod'
+});
 
 /***/ }),
 
@@ -25920,15 +26282,13 @@ var app = new Vue({
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__en__ = __webpack_require__("./resources/assets/js/lang/en/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__en___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__en__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cn__ = __webpack_require__("./resources/assets/js/lang/cn/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__cn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__cn__);
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    en: __WEBPACK_IMPORTED_MODULE_0__en___default.a,
-    cn: __WEBPACK_IMPORTED_MODULE_1__cn___default.a
+    en: __WEBPACK_IMPORTED_MODULE_0__en__["a" /* default */],
+    cn: __WEBPACK_IMPORTED_MODULE_1__cn__["a" /* default */]
 });
 
 /***/ }),
