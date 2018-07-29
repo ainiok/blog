@@ -55,7 +55,27 @@ $factory->define(\App\Models\Tag::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(App\Models\Discussion::class, function (Faker $faker) {
+    $user_ids = \App\Models\User::pluck('id')->random();
+    return [
+        'user_id'      => $user_ids,
+        'last_user_id' => $user_ids,
+        'title'        => $faker->sentence,
+        'content'      => $faker->paragraph,
+        'status'       => true,
+    ];
+});
+
 $factory->define(\App\Models\Comment::class, function (Faker $faker) {
+    $user_ids = \App\Models\User::pluck('id')->random();
+    $discussion_ids = \App\Models\Discussion::pluck('id')->random();
+    $type = ['discussions', 'articles'];
+    return [
+        'user_id'             => $user_ids,
+        'commentable_type'    => $type[mt_rand(0, 1)],
+        'commentable_id'      => $discussion_ids,
+        'content'             => $faker->paragraph
+    ];
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\FollowTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -9,7 +10,7 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable, SoftDeletes;
+    use HasApiTokens, Notifiable, SoftDeletes, FollowTrait;
 
     protected $dates = ['deleted_at'];
     /**
@@ -40,5 +41,10 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
+    }
+
+    public function discussions()
+    {
+        return $this->hasMany(Discussion::class)->orderBy('created_at', 'desc');
     }
 }

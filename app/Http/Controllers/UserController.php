@@ -23,8 +23,9 @@ class UserController extends Controller
         $user = $this->user->firstByUsername($username);
         if (!isset($user)) abort(404);
 
+        $discussions = $user->discussions->take(10);
         $comments = $user->comments->take(10);
-        return view('user.index', compact('user', 'comments'));
+        return view('user.index', compact('user', 'discussions', 'comments'));
     }
 
     //
