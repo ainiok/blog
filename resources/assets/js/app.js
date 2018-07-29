@@ -12,10 +12,27 @@ import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import store from './vuex/store';
 
+import 'vue-multiselect/dist/vue-multiselect.min.css';
+
 import routes from './routes.js';
 import locales from 'lang';
 
 import App from './App.vue'
+
+window.toastr = require('toastr/build/toastr.min');
+window.innerHeight = 800;
+
+window.toastr.options = {
+    positionClass: "toast-bottom-right",
+    showDuration: "300",
+    hideDuration: "1000",
+    timeOut: "5000",
+    extendedTimeOut: "1000",
+    showEasing: "swing",
+    hideEasing: "linear",
+    showMethod: "fadeIn",
+    hideMethod: "fadeOut"
+};
 
 Vue.use(httpPlugin);
 Vue.use(VueI18n);
@@ -33,6 +50,21 @@ const i18n = new VueI18n({
     messages: locales
 })
 
+Vue.component(
+    'vue-table-pagination',
+    require('components/dashboard/TablePagination.vue')
+);
+
+Vue.component(
+    'vue-table',
+    require('components/dashboard/Table.vue')
+);
+
+Vue.component(
+    'vue-form',
+    require('components/dashboard/Form.vue')
+);
+
 const router = new VueRouter({
     mode: 'history',
     base: __dirname,
@@ -44,6 +76,7 @@ new Vue({
     el: '#app',
     router,
     i18n,
+    store,
     components: {App},
     template: '<App/>'
 })

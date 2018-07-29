@@ -22,7 +22,11 @@
             Navbar,
             FooterBar
         },
-        name: "Dashboard"
+        computed: {
+            isToggle() {
+                return this.$store.state.sidebar.opened
+            }
+        }
     }
 </script>
 

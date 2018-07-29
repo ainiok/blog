@@ -12,6 +12,7 @@
     "devDependencies": {
         "axios": "^0.17",
         "bootstrap-sass": "^3.3.7",
+        "chart.js": "^2.4.0",
         "cross-env": "^5.2.0",
         "ionicons": "^2.0.1",
         "jquery": "^3.2",
