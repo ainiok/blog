@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => ['auth:api', 'admin'], 'namespace' => 'Api'], function () {
+    Route::get('statistics','HomeController@statistics');
+});

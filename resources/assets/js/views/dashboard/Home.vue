@@ -61,11 +61,45 @@
 
 <script>
     import Chart from '../../components/Chartjs.vue'
+
     export default {
-        name: "Home"
+        components: {
+            Chart
+        },
+        data() {
+            return {
+                statistics: {}
+            }
+        },
+        mounted() {
+            this.$http.get('statistics')
+                .then((response) => {
+                    this.statistics = response.data
+                })
+        }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    h1 {
+        font-size: 30px;
+        font-weight: normal;
+    }
 
+    h5 {
+        font-size: 14px;
+    }
+
+    h1 i {
+        font-size: 35px;
+        margin-right: 12px;
+    }
+
+    .label {
+        padding: .3em .6em;
+    }
+
+    .no-margins {
+        margin: 0 !important;
+    }
 </style>
