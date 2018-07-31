@@ -1,13 +1,18 @@
 
 // Fonts
-//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// @import url(https://fonts.googleapis.com/css?family=Raleway:400);
 
 // Variables
 @import "variables";
 
 // Bootstrap
-
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Ionicons
-@import "~ionicons/scss/ionicons";
+@import 'node_modules/ionicons/scss/ionicons';
+
+//Sweetalert
+@import "node_modules/sweetalert2/src/sweetalert2.scss";
+
+// Toastr
+@import "vendor/toastr.min";

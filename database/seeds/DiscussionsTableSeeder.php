@@ -1,7 +1,7 @@
 <?php
 
+use App\Discussion;
 use Illuminate\Database\Seeder;
-use App\Models\Discussion;
 
 class DiscussionsTableSeeder extends Seeder
 {
@@ -12,7 +12,6 @@ class DiscussionsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         factory(Discussion::class, 20)->create();
     }
 }

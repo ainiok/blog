@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xiaojin
- * Email: job@ainiok.com
- * Date: 2018/7/22 9:21
- */
 
 return [
+
     // Mail Notification
     'mail_notification' => env('MAIL_NOTIFICATION') ?: false,
 
@@ -14,12 +9,12 @@ return [
     'default_avatar' => env('DEFAULT_AVATAR') ?: '/images/default.png',
 
     // Default Icon
-    'default_icon' => env('DEFAULT_ICON') ?: '/favicon.ico',
+    'default_icon' => env('DEFAULT_ICON') ?: '/images/favicon.ico',
 
-    // Metadefault_icon
+    // Meta
     'meta' => [
-        'keywords' => 'J Blog,blog,ainiok,laravel,vuejs',
-        'description' => 'Vuejs & laravel blog'
+        'keywords' => 'PJ Blog,blog,pigjian,laravel,vuejs',
+        'description' => 'Nothing is impossible in PJ Blog'
     ],
 
     // Social Share
@@ -39,9 +34,9 @@ return [
     // Article Page
     'article' => [
         'title'       => 'Nothing is impossible.',
-        'description' => 'https://ainiok.com',
+        'description' => 'https://pigjian.com',
         'number'      => 15,
-        'sortOrder'        => 'desc',
+        'sort'        => 'desc',
         'sortColumn'  => 'published_at',
     ],
 
@@ -56,14 +51,15 @@ return [
     'footer' => [
         'github' => [
             'open' => true,
-            'url'  => 'https://github.com/ainiok',
+            'url'  => 'https://github.com/jcc',
         ],
         'twitter' => [
-            'open' => false,
-            'url'  => ''
+            'open' => true,
+            'url'  => 'https://twitter.com/pigjian'
         ],
-        'meta' => '© J Blog 2018. Powered By ainiok',
+        'meta' => '© PJ Blog 2016. Powered By Jiajian Chan',
     ],
 
-    'license' => 'Powered By ainiok.<br/>This article is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.',
+    'license' => 'Powered By Jiajian Chan.<br/>This article is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.',
+
 ];

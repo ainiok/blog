@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title',lang('Account Setting'))
-
 @section('content')
     <div class="container setting">
         <div class="row">

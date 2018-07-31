@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title',lang('Personal Center'))
-
 @section('content')
     @include('user.particals.info')
     <div class="container">

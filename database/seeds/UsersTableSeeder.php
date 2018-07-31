@@ -1,8 +1,8 @@
 <?php
 
 use Carbon\Carbon;
+use App\User;
 use Illuminate\Database\Seeder;
-use App\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,20 +13,21 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        $users = [
+            [
+                'name' => 'admin',
+                'email' => 'admin@pigjian.com',
+                'password' => Hash::make('admin'),
+                'status' => true,
+                'is_admin' => true,
+                'confirm_code' => str_random(64),
+                'created_at'  => Carbon::now(),
+                'updated_at'  => Carbon::now()
+            ]
+        ];
 
-        $password = Hash::make('123456');
-        User::create([
-            'name' => 'admin',
-            'nickname'=>'admin',
-            'email' => 'admin@qq.com',
-            'password' => $password,
-            'status' => true,
-            'is_admin' => true,
-            'confirm_code' => str_random(64),
-            'created_at'  => Carbon::now(),
-            'updated_at'  => Carbon::now()
-        ]);
-        factory(User::class,10)->create();
+        DB::table('users')->insert($users);
+
+        factory(User::class, 10)->create();
     }
 }

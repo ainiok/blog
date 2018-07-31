@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Tag;
+
 class TagsTableSeeder extends Seeder
 {
     /**
@@ -11,7 +13,6 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        factory(\App\Models\Tag::class,10)->create();
+        factory(Tag::class, 5)->create();
     }
 }

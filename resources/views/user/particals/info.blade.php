@@ -33,14 +33,14 @@
                     @endif
                     <div class="footer">
                         @if($user->github_name)
-                            <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/{{ $user->github_name }}" data-toggle="tooltip" data-placement="top" title="{{ $user->name }}'s Github">
-                                <i class="ion-social-github"></i>
-                            </a>
+                        <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/{{ $user->github_name }}" data-toggle="tooltip" data-placement="top" title="{{ $user->name }}'s Github">
+                            <i class="ion-social-github"></i>
+                        </a>
                         @endif
                         @if($user->website)
-                            <a class="btn btn-sm btn-primary" target="_blank" href="{{ $user->website }}" data-toggle="tooltip" data-placement="top" title="{{ $user->name }}'s Website">
-                                <i class="ion-earth"></i>
-                            </a>
+                        <a class="btn btn-sm btn-primary" target="_blank" href="{{ $user->website }}" data-toggle="tooltip" data-placement="top" title="{{ $user->name }}'s Website">
+                            <i class="ion-earth"></i>
+                        </a>
                         @endif
                     </div>
                 </div>

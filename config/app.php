@@ -10,10 +10,9 @@ return [
     | This value is the name of your application. This value is used when the
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
-    |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APPLICATION_NAME') ?: 'PJ Blog',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://pigjian.app'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('TIMEZONE') ?: 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,14 +118,11 @@ return [
     |
     | Available Settings: "single", "daily", "syslog", "errorlog"
     |
-    | Retain five days of log files by default
     */
 
-    'log' => env('APP_LOG', 'daily'),
+    'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
-
-    'log_max_files' => env('APP_LOG_MAX_FILES', 5),
 
     /*
     |--------------------------------------------------------------------------
@@ -170,8 +166,14 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravel\Passport\PassportServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        JellyBool\Translug\TranslugServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
+        Jcc\LaravelVote\VoteServiceProvider::class,
+        JellyBool\Flysystem\Upyun\UpyunServiceProvider::class,
 
-        \Laravel\Passport\PassportServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,7 +231,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Translug' => JellyBool\Translug\TranslugFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

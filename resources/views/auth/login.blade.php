@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title',lang('Login'))
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -52,19 +52,19 @@
                         </div>
 
                         @if(config('services.github.client_id'))
-                            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                                <div class="strike">
-                                    <span>or</span>
-                                </div>
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            <div class="strike">
+                                <span>or</span>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div class="col-lg-10 col-lg-offset-1">
-                                    <a href="{{ url('/auth/github') }}" class="btn btn-primary form-control">
-                                        <i class="ion-social-github"></i> {{ lang('Login With Github') }}
-                                    </a>
-                                </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <a href="{{ url('/auth/github') }}" class="btn btn-primary form-control">
+                                    <i class="ion-social-github"></i> {{ lang('Login With Github') }}
+                                </a>
                             </div>
+                        </div>
                         @endif
 
                         <div class="form-group">

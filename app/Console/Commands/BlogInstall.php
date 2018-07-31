@@ -22,8 +22,6 @@ class BlogInstall extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -40,7 +38,6 @@ class BlogInstall extends Command
         $this->execShellWithPrettyPrint('php artisan key:generate');
         $this->execShellWithPrettyPrint('php artisan migrate --seed');
         $this->execShellWithPrettyPrint('php artisan passport:install');
-        $this->execShellWithPrettyPrint('composer dump-autoload');   //可以手动执行
         $this->execShellWithPrettyPrint('php artisan storage:link');
     }
 
@@ -52,10 +49,10 @@ class BlogInstall extends Command
      */
     public function execShellWithPrettyPrint($command)
     {
-        $this->info('----------------');
+        $this->info('---');
         $this->info($command);
         $output = shell_exec($command);
         $this->info($output);
-        $this->info('----------------');
+        $this->info('---');
     }
 }

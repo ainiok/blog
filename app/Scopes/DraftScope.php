@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xiaojin
- * Email: job@ainiok.com
- * Date: 2018/7/29 18:25
- */
 
 namespace App\Scopes;
 
@@ -14,8 +8,15 @@ use Illuminate\Database\Eloquent\Builder;
 
 class DraftScope implements Scope
 {
+    /**
+     * Apply the scope to a given Eloquent query builder.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $builder
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @return void
+     */
     public function apply(Builder $builder, Model $model)
     {
-        return $builder->where('is_draft', 0);
+        $builder->where('is_draft', 0);
     }
 }

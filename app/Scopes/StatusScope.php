@@ -1,22 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xiaojin
- * Email: job@ainiok.com
- * Date: 2018/7/29 18:25
- */
 
 namespace App\Scopes;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
+use Illuminate\Database\Eloquent\Builder;
 
 class StatusScope implements Scope
 {
-
+    /**
+     * Apply the scope to a given Eloquent query builder.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $builder
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @return void
+     */
     public function apply(Builder $builder, Model $model)
     {
-        return $builder->where('status', 1);
+        $builder->where('status', 1);
     }
 }

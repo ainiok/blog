@@ -2,7 +2,7 @@ export function stack_error(response) {
     if (typeof response.data == 'string') {
         toastr.error(response.status + ' ' + response.statusText)
     } else {
-        let data = response.data.errors
+        let data = response.data
         let content = '';
 
         Object.keys(data).map(function(key, index) {

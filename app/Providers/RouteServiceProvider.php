@@ -23,8 +23,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
     }
 
@@ -39,7 +37,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        Route::post('/oauth/token', [
+            'uses' => '\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken',
+        ]);
     }
 
     /**

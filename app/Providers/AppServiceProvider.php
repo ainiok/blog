@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Models\Article;
-use App\Models\Discussion;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Facades\Schema;
+use App\Article;
+use App\Discussion;
 use Illuminate\Support\ServiceProvider;
+use App\Tools\FileManager\BaseManager;
+use App\Tools\FileManager\UpyunManager;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,13 +18,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
-        $lang = config('app.locale') !== 'cn' ? config('app.locale') : 'zh';
-        Carbon::setLocale($lang);
-        // 自定义多态类型
+        $lang = config('app.locale') != 'zh_cn' ? config('app.locale') : 'zh';
+        \Carbon\Carbon::setLocale($lang);
+
         Relation::morphMap([
             'discussions' => Discussion::class,
-            'articles' => Article::class
+            'articles'    => Article::class,
         ]);
     }
 
@@ -35,6 +34,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('uploader', function ($app) {
+            $config = config('filesystems.default', 'public');
+
+            if ($config == 'upyun') {
+                return new UpyunManager();
+            }
+
+            return new BaseManager();
+        });
     }
 }

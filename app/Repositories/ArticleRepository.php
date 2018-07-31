@@ -1,29 +1,98 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xiaojin
- * Email: job@ainiok.com
- * Date: 2018/7/21 23:09
- */
 
 namespace App\Repositories;
 
-use App\Models\Article;
+use App\Article;
+use App\Scopes\DraftScope;
 
-class ArticleRepository extends BaseRepository
+class ArticleRepository
 {
+    use BaseRepository;
+
     protected $model;
 
-    public function __construct(Article $article)
+    protected $visitor;
+
+    public function __construct(Article $article, VisitorRepository $visitor)
     {
         $this->model = $article;
+
+        $this->visitor = $visitor;
     }
 
-    public function page($perPage = '15', $sortColumn = 'created_at', $sortOrder = 'desc')
+    /**
+     * Get the page of articles without draft scope.
+     * 
+     * @param  integer $number
+     * @param  string  $sort
+     * @param  string  $sortColumn
+     * @return collection
+     */
+    public function page($number = 10, $sort = 'desc', $sortColumn = 'created_at')
     {
-        return $this->model->orderBy($sortColumn, $sortOrder)->paginate($perPage);
+        $this->model = $this->checkAuthScope();
+
+        return $this->model->orderBy($sortColumn, $sort)->paginate($number);
     }
 
+    /**
+     * Get the article record without draft scope.
+     * 
+     * @param  int $id
+     * @return mixed
+     */
+    public function getById($id)
+    {
+        return $this->model->withoutGlobalScope(DraftScope::class)->findOrFail($id);
+    }
+
+    /**
+     * Update the article record without draft scope.
+     * 
+     * @param  int $id
+     * @param  array $input
+     * @return boolean
+     */
+    public function update($id, $input)
+    {
+        $this->model = $this->model->withoutGlobalScope(DraftScope::class)->findOrFail($id);
+
+        return $this->save($this->model, $input);
+    }
+
+    /**
+     * Get the article by article's slug.
+     * The Admin can preview the article if the article is drafted.
+     *
+     * @param $slug
+     * @return object
+     */
+    public function getBySlug($slug)
+    {
+        $this->model = $this->checkAuthScope();
+
+        $article = $this->model->where('slug', $slug)->firstOrFail();
+
+        $article->increment('view_count');
+
+        $this->visitor->log($article->id);
+
+        return $article;
+    }
+
+    /**
+     * Check the auth and the model without global scope when user is the admin.
+     * 
+     * @return Model
+     */
+    public function checkAuthScope()
+    {
+        if (auth()->check() && auth()->user()->is_admin) {
+            $this->model = $this->model->withoutGlobalScope(DraftScope::class);
+        }
+
+        return $this->model;
+    }
 
     /**
      * Sync the tags for the article.
@@ -35,4 +104,33 @@ class ArticleRepository extends BaseRepository
     {
         $this->model->tags()->sync($tags);
     }
+
+    /**
+     * Search the articles by the keyword.
+     * 
+     * @param  string $key
+     * @return collection
+     */
+    public function search($key)
+    {
+        $key = trim($key);
+
+        return $this->model
+                    ->where('title', 'like', "%{$key}%")
+                    ->orderBy('published_at', 'desc')
+                    ->get();
+
+    }
+
+    /**
+     * Delete the draft article.
+     *
+     * @param int $id
+     * @return boolean
+     */
+    public function destroy($id)
+    {
+        return $this->getById($id)->delete();
+    }
+
 }
