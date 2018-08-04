@@ -19,7 +19,7 @@ trait BaseRepository
      *
      * @param $id
      * @param $input
-     * @return App\Model|User
+     * @return \App\Models\User
      */
     public function updateColumn($id, $input)
     {
@@ -46,7 +46,7 @@ trait BaseRepository
     /**
      * Get model by id.
      *
-     * @return App\Model
+     * @return \App\Models\
      */
     public function getById($id)
     {

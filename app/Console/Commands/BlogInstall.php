@@ -39,6 +39,7 @@ class BlogInstall extends Command
         $this->execShellWithPrettyPrint('php artisan migrate --seed');
         $this->execShellWithPrettyPrint('php artisan passport:install');
         $this->execShellWithPrettyPrint('php artisan storage:link');
+//        $this->execShellWithPrettyPrint('composer dump-autoload');   //可以手动执行
     }
 
     /**

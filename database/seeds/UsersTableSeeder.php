@@ -1,7 +1,7 @@
 <?php
 
 use Carbon\Carbon;
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'name' => 'admin',
-                'email' => 'admin@pigjian.com',
+                'email' => 'admin@ainiok.com',
                 'password' => Hash::make('admin'),
                 'status' => true,
                 'is_admin' => true,

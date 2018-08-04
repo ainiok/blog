@@ -36,7 +36,7 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Helpers.php"
+            "app\\Helpers\\CommonHelper.php"
         ]
     },
     "autoload-dev": {

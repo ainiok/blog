@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Link;
+use App\Models\Link;
 
 class LinksTableSeeder extends Seeder
 {

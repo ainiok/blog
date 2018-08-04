@@ -1,71 +1,132 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<a href="https://pigjian.com/">
+<img src="https://pigjian.com/uploads/Logo.png" alt="Powered By Jiajian Chan" width="160">
+</a>
 </p>
 
-## About Laravel
+<p align="center">🎈 PJ Blog is an open source blog built with Laravel and Vue.js. <a href="https://pigjian.com">https://pigjian.com</a></p>
 
-- dddd
+<p align="center">
+  <b>Special thanks to the generous sponsorship by:</b>
+  <br><br>
+  <a href="https://www.yousails.com">
+    <img src="https://yousails.com/banners/brand.png" width=350>
+  </a><br/>
+  <a href="https://www.upyun.com">
+    <img src="https://pigjian.com/storage/logo/upyun.png" width=300>
+  </a>
+</p>
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+# PJ Blog
 
-## 前端资源
+This is a powerful blog, I try to build the blog more beautiful, more convenient. 
 
-> npm install --no-bin-links
+`Laravel 5.*` and `Vuejs 2.*` combined with the establishment of a good response and quickly dashboard, the dashboard made through the `Vuejs` component development.
 
-- 'cross-env' 不是内部或外部命令，也不是可运行的程序
+I believe it will be better and better. If you are interested in this, you can join and enjoy it.
 
-> npm i cross-env --save-dev
+Here is [documents](https://manual.pigjian.com/)
 
-> 注意： "ionicons": "^2.0.1", 指定版本,新版本有些ionicons 图标找不到
+[Example](http://example.pigjian.com)
 
-## 控前端资源改变
-> npm run watch
+## Basic Features
 
+- Manage users, articles, discussions and media
+- Statistical tables
+- Categorize articles
+- Label classification
+- Content moderation
+- Own comments system
+- Multi-language switching
+- Markdown Editor
+- and more...
 
-## 安装
+[PJ Blog](https://github.com/jcc/blog) Laravel 5.*
 
-> php artisan blog:install   **[控制台命令](http://laravelacademy.org/post/8346.html)**
+## Server Requirements
 
+- PHP >= 7.0.0
+- Node >= 6.x
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
 
+## Preview
 
+![New Blog](https://pigjian.com/uploads/post_img/2016-12-27/newblog1.jpeg)
 
+![New Blog](https://pigjian.com/uploads/post_img/2016-12-27/newblog2.jpeg)
 
+## Install
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+### 1. Clone the source code or create new project.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+```shell
+git clone https://github.com/jcc/blog.git
+```
 
-## Laravel Sponsors
+OR
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+```shell
+composer create-project jcc/blog
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+### 2. Set the basic config
 
-## Contributing
+```shell
+cp .env.example .env
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Edit the `.env` file and set the `database` and other config for the system after you copy the `.env`.example file.
 
-## Security Vulnerabilities
+### 2. Install the extended package dependency.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Install the `Laravel` extended repositories: 
+
+```shell
+composer install -vvv
+```
+
+Install the `Vuejs` extended repositories: 
+
+```shel
+npm install
+```
+
+Compile the js code: 
+
+```shel
+npm run dev
+
+// OR
+
+npm run watch
+
+// OR
+
+npm run production
+```
+
+### 3. Run the blog install command, the command will run the `migrate` command and generate test data.
+
+```shell
+php artisan blog:install
+```
+
+## Contributors
+
+- [Jiajian Chan](http://github.com/jcc)
+
+## Thanks
+
+- [overtrue](https://github.com/overtrue)
+- [Laravist](https://www.laravist.com/)
+- [Laravel - China](https://laravel-china.org/)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The project is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+QQ Group: 272734386

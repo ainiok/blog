@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Tools\IP;
-use App\Visitor;
+use App\Models\Visitor;
 
 class VisitorRepository
 {

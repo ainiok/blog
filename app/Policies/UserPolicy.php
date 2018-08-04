@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
@@ -12,8 +12,8 @@ class UserPolicy
     /**
      * Determine whether the current user can update the user.
      *
-     * @param  \App\User  $currentUser
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $currentUser
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function update(User $currentUser, User $user)
@@ -24,8 +24,8 @@ class UserPolicy
     /**
      * Determine whether the current user can delete the user.
      *
-     * @param  \App\User  $currentUser
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $currentUser
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function delete(User $currentUser, User $user)

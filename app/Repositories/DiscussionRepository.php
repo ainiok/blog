@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Discussion;
+use App\Models\Discussion;
 use App\Scopes\StatusScope;
 
 class DiscussionRepository

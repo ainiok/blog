@@ -1,6 +1,6 @@
 <?php
 
-use App\Discussion;
+use App\Models\Discussion;
 use Illuminate\Database\Seeder;
 
 class DiscussionsTableSeeder extends Seeder

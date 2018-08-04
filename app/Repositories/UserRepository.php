@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use Auth;
-use App\User;
+use App\Models\User;
 use App\Scopes\StatusScope;
 
 class UserRepository

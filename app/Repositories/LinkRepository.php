@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Link;
+use App\Models\Link;
 use App\Scopes\StatusScope;
 
 class LinkRepository

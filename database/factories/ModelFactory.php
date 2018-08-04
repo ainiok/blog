@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -24,13 +24,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->defineAs(App\User::class, 'admin', function () use ($factory) {
-    $user = $factory->raw(App\User::class);
+$factory->defineAs(App\Models\User::class, 'admin', function () use ($factory) {
+    $user = $factory->raw(App\Models\User::class);
 
     return array_merge($user, ['is_admin' => 1, 'password' => bcrypt('admin')]);
 });
 
-$factory->define(App\Category::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Category::class, function (Faker\Generator $faker) {
     return [
         'name'      => $faker->name,
         'parent_id' => 0,
@@ -38,9 +38,9 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Article::class, function (Faker\Generator $faker) {
-    $user_ids = \App\User::pluck('id')->random();
-    $category_ids = \App\Category::pluck('id')->random();
+$factory->define(App\Models\Article::class, function (Faker\Generator $faker) {
+    $user_ids = \App\Models\User::pluck('id')->random();
+    $category_ids = \App\Models\Category::pluck('id')->random();
     $title = $faker->sentence(mt_rand(3,10));
     return [
         'user_id'      => $user_ids,
@@ -57,7 +57,7 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Tag::class, function (Faker\Generator $faker) {
     return [
         'tag'              => $faker->word,
         'title'            => $faker->sentence,
@@ -65,8 +65,8 @@ $factory->define(App\Tag::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Discussion::class, function (Faker\Generator $faker) {
-    $user_ids = \App\User::pluck('id')->random();
+$factory->define(App\Models\Discussion::class, function (Faker\Generator $faker) {
+    $user_ids = \App\Models\User::pluck('id')->random();
     return [
         'user_id'      => $user_ids,
         'last_user_id' => $user_ids,
@@ -76,9 +76,9 @@ $factory->define(App\Discussion::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Comment::class, function (Faker\Generator $faker) {
-    $user_ids = \App\User::pluck('id')->random();
-    $discussion_ids = \App\Discussion::pluck('id')->random();
+$factory->define(App\Models\Comment::class, function (Faker\Generator $faker) {
+    $user_ids = \App\Models\User::pluck('id')->random();
+    $discussion_ids = \App\Models\Discussion::pluck('id')->random();
     $type = ['discussions', 'articles'];
     return [
         'user_id'             => $user_ids,
@@ -88,7 +88,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Link::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Link::class, function (Faker\Generator $faker) {
     return [
         'name'  => $faker->name,
         'link'  => $faker->url,
@@ -96,11 +96,11 @@ $factory->define(App\Link::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Visitor::class, function (Faker\Generator $faker) {
-    $article_id = \App\Article::pluck('id')->random();
+$factory->define(App\Models\Visitor::class, function (Faker\Generator $faker) {
+    $article_id = \App\Models\Article::pluck('id')->random();
     $num = $faker->numberBetween(1, 100);
 
-    $article = App\Article::find($article_id);
+    $article = App\Models\Article::find($article_id);
     $article->view_count = $num;
     $article->save();
 

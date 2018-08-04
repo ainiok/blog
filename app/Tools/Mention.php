@@ -2,7 +2,7 @@
 
 namespace App\Tools;
 
-use App\User;
+use App\Models\User;
 
 class Mention
 {

@@ -1,6 +1,6 @@
 <?php
 
-use App\Visitor;
+use App\Models\Visitor;
 use Illuminate\Database\Seeder;
 
 class VisitorsTableSeeder extends Seeder
