@@ -2,7 +2,7 @@
 
 namespace App\Notifications;
 
-use App\Comment;
+use App\Models\Comment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -17,7 +17,7 @@ class MentionedUser extends Notification implements ShouldQueue
     /**
      * Create a new notification instance.
      *
-     * @param \App\Comment $comment
+     * @param \App\Models\Comment $comment
      *
      * @return void
      */

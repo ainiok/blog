@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Visitor;
+use App\Models\Visitor;
 use League\Fractal\TransformerAbstract;
 
 class VisitorTransformer extends TransformerAbstract

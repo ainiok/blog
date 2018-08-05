@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Comment;
+use App\Models\Comment;
 use App\Scopes\StatusScope;
 use League\Fractal\TransformerAbstract;
 

@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Tag;
+use App\Models\Tag;
 use League\Fractal\TransformerAbstract;
 
 class TagTransformer extends TransformerAbstract

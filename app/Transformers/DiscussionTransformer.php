@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Discussion;
+use App\Models\Discussion;
 use League\Fractal\TransformerAbstract;
 
 class DiscussionTransformer extends TransformerAbstract
