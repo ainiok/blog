@@ -1,17 +1,17 @@
 <?php
-$comment = App\Comment::find($notification->data['comment_id']);
-$user = App\User::find($notification->data['issuer_id']);
+$comment = App\Models\Comment::find($notification->data['comment_id']);
+$user = App\Models\User::find($notification->data['issuer_id']);
 
 $commentable_id = $notification->data['commentable_id'];
 
 if ($comment &&  $comment->commentable) {
     switch($comment->commentable_type) {
         case 'articles':
-            $article = App\Article::find($commentable_id);
+            $article = App\Models\Article::find($commentable_id);
             $url = url($article->slug);
             break;
         case 'discussions':
-            $discussion = App\Discussion::find($commentable_id);
+            $discussion = App\Models\Discussion::find($commentable_id);
             $url = url('discussion', ['id' => $discussion->id]);
             break;
     }

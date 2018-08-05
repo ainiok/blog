@@ -104,7 +104,7 @@ class UserRepository
     /**
      * Change the user password.
      * 
-     * @param  App\User $user 
+     * @param  \App\Models\User $user
      * @param  string $password
      * @return boolean
      */

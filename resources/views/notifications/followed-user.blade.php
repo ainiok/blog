@@ -1,5 +1,5 @@
 <?php
-$user = App\User::find($notification->data['id']);
+$user = App\Models\User::find($notification->data['id']);
 ?>
 
 <li :class="'{{ empty($notification->read_at) }}' ? 'bold' : ''">

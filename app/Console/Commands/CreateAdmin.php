@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\User;
+use App\Models\User;
 use Validator;
 use RuntimeException;
 use Identicon\Identicon;

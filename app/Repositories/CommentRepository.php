@@ -95,7 +95,7 @@ class CommentRepository
     /**
      * Up vote or down vote item.
      * 
-     * @param  \App\User $user
+     * @param  \App\Models\User $user
      * @param  \Illuminate\Database\Eloquent\Model $target
      * @param  string $type
      * 
